@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import api from '../../lib/api';
-import { Typography, List, ListItem, ListItemText, Button } from '@mui/material';
+import { Typography, List, ListItem, ListItemButton, ListItemText, Button } from '@mui/material';
 import Link from 'next/link';
 
 export default function Leads() {
@@ -32,8 +32,10 @@ export default function Leads() {
       </Button>
       <List>
         {leads.map((lead) => (
-          <ListItem key={lead.id} divider>
-            <ListItemText primary={lead.title || lead.name || lead.email} />
+          <ListItem key={lead.id} disablePadding>
+            <ListItemButton component={Link} href={`/leads/${lead.id}`}>
+              <ListItemText primary={lead.title || lead.name || lead.email} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
