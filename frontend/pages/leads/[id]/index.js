@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { Typography } from '@mui/material';
-import Layout from '../../components/Layout';
-import api from '../../lib/api';
+import { Typography, Button, Box } from '@mui/material';
+import Link from 'next/link';
+import Layout from '../../../components/Layout';
+import api from '../../../lib/api';
 
 export default function LeadDetail() {
   const router = useRouter();
@@ -32,9 +33,14 @@ export default function LeadDetail() {
 
   return (
     <Layout>
-      <Typography variant="h5" gutterBottom>
-        {lead.title || lead.name || lead.email}
-      </Typography>
+      <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+        <Typography variant="h5">
+          {lead.title || lead.name || lead.email}
+        </Typography>
+        <Button variant="contained" component={Link} href={`/leads/${id}/edit`}>
+          Edit
+        </Button>
+      </Box>
       {lead.email && (
         <Typography gutterBottom>Email: {lead.email}</Typography>
       )}
