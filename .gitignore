@@ -26,3 +26,11 @@ server.log
 .vscode
 staticfiles
 .venv
+
+# Node
+frontend/node_modules
+frontend/.next
+frontend/out
+node_modules
+.next
+out

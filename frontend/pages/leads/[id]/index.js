@@ -1,0 +1,74 @@
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { Typography, Button, Box } from '@mui/material';
+import Link from 'next/link';
+import Layout from '../../../components/Layout';
+import api from '../../../lib/api';
+
+export default function LeadDetail() {
+  const router = useRouter();
+  const { id } = router.query;
+  const [lead, setLead] = useState(null);
+
+  useEffect(() => {
+    if (!id) return;
+    const fetchLead = async () => {
+      try {
+        const res = await api.get(`/leads/${id}/`);
+        setLead(res.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchLead();
+  }, [id]);
+
+  const handleDelete = async () => {
+    if (confirm('Are you sure you want to delete this lead?')) {
+      try {
+        await api.delete(`/leads/${id}/`);
+        router.push('/leads');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  };
+
+  if (!lead) {
+    return (
+      <Layout>
+        <Typography>Loading...</Typography>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+        <Typography variant="h5">
+          {lead.title || lead.name || lead.email}
+        </Typography>
+        <Box>
+          <Button
+            variant="contained"
+            component={Link}
+            href={`/leads/${id}/edit`}
+            sx={{ mr: 2 }}
+          >
+            Edit
+          </Button>
+          <Button variant="outlined" color="error" onClick={handleDelete}>
+            Delete
+          </Button>
+        </Box>
+      </Box>
+      {lead.email && (
+        <Typography gutterBottom>Email: {lead.email}</Typography>
+      )}
+      {lead.company && (
+        <Typography gutterBottom>Company: {lead.company}</Typography>
+      )}
+    </Layout>
+  );
+}
+
