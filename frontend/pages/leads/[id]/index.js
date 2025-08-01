@@ -23,6 +23,17 @@ export default function LeadDetail() {
     fetchLead();
   }, [id]);
 
+  const handleDelete = async () => {
+    if (confirm('Are you sure you want to delete this lead?')) {
+      try {
+        await api.delete(`/leads/${id}/`);
+        router.push('/leads');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  };
+
   if (!lead) {
     return (
       <Layout>
@@ -37,9 +48,19 @@ export default function LeadDetail() {
         <Typography variant="h5">
           {lead.title || lead.name || lead.email}
         </Typography>
-        <Button variant="contained" component={Link} href={`/leads/${id}/edit`}>
-          Edit
-        </Button>
+        <Box>
+          <Button
+            variant="contained"
+            component={Link}
+            href={`/leads/${id}/edit`}
+            sx={{ mr: 2 }}
+          >
+            Edit
+          </Button>
+          <Button variant="outlined" color="error" onClick={handleDelete}>
+            Delete
+          </Button>
+        </Box>
       </Box>
       {lead.email && (
         <Typography gutterBottom>Email: {lead.email}</Typography>
