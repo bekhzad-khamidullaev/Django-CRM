@@ -5,13 +5,13 @@
     <div class="form-group col-md-8 col-sm-8">
       <div class="input-group">
         <div class="input-group-btn left-dropdown">
-          <button type="button" class="btn dropdown-toggle filters-button btn-default" title="Filter" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
-            <span class="filters-label">All</span><span class="caret"></span>
+          <button type="button" class="btn dropdown-toggle filters-button btn-secondary" title="Filter" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+            <span class="filters-label">All</span><span class="material-icons">arrow_drop_down</span>
           </button>
           <ul class="dropdown-menu pull-left filter-menu">
             <li>
               <a class="preset" tabindex="-1" href="javascript:" data-name="" data-action="selectPreset">
-                <span class="glyphicon glyphicon-ok pull-right"></span>
+                <span class="material-icons right">check</span>
                 <div>All</div>
               </a>
             </li>
@@ -31,17 +31,17 @@
         <input type="text" class="form-control text-filter" name="textFilter" value="" tabindex="1">
         <div class="input-group-btn">
           <button type="button" class="btn btn-primary search btn-icon" data-action="search">
-            <span class="glyphicon glyphicon-search"></span>
+            <span class="material-icons">search</span>
           </button>
         </div>
       </div>
     </div>
     <div class="form-group col-md-4 col-sm-4">
       <div class="btn-group">
-        <button type="button" class="btn btn-default extra_option_btn" data-action="reset">
-          <span class="glyphicon glyphicon-repeat"></span>&nbsp;Reset
+        <button type="button" class="btn btn-secondary extra_option_btn" data-action="reset">
+          <span class="material-icons">refresh</span>&nbsp;Reset
         </button>
-        <button type="button" class="btn btn-default dropdown-toggle extra_option_btn add-filter-button" data-toggle="dropdown" tabindex="-1">Add Field <span class="caret"></span>
+        <button type="button" class="btn btn-secondary dropdown-toggle extra_option_btn add-filter-button" data-toggle="dropdown" tabindex="-1">Add Field <span class="material-icons">arrow_drop_down</span>
         </button>
         <ul class="dropdown-menu pull-right filter-list">
           <li data-name="account" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="account">Account</a></li>
@@ -58,5 +58,5 @@
   </div>
 </div>
 <div class="create_new col-md-3 text-right">
-  <a href="{% url 'emails:compose' %}"><i class="fa fa-plus"></i> Compose Email</a>
+  <a href="{% url 'emails:compose' %}"><span class="material-icons">add</span> Compose Email</a>
 </div>

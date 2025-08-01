@@ -12,8 +12,8 @@
   <div class="table_container_row row marl">
     
     <div class="col-md-2 col-sm-3 col-xs-12 mail_menu">
-      <div class="panel panel-default">
-        <div class="panel-content">
+      <div class="card">
+        <div class="card-body">
           <ul class="mail_options">
             <li><a href="{% url 'emails:email_sent' %}">Sent Mails</a></li>
             <li class="active"><a href="{% url 'emails:email_draft' %}">Drafts</a></li>
@@ -26,14 +26,14 @@
     </div>
     
     <div class="col-md-10 col-sm-9 col-xs-12">
-      
+
       <div class="filter_row row marl">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            filters
+        <div class="card">
+          <div class="card-title">
+            Filters
           </div>
           <form method="GET" action="/emails/email_draft/" >
-            <div class="panel-content">
+            <div class="card-body">
               <div class="filter_col col-md-3">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
@@ -54,14 +54,14 @@
               </div>
               <div class="filter_col filter_buttons col-md-3"></div>
               <button class="btn btn-primary save" name="email_f" value="draft" type="submit">Search</button>
-              <a href="{% url 'emails:email_draft' %}"><button type="button" class="btn btn-primary btn-default">Clear</button></a>
+              <a href="{% url 'emails:email_draft' %}"><button type="button" class="btn btn-secondary">Clear</button></a>
             </div>
           </form>
           <br clear="all">
         </div>
-        
-        <div class="panel panel-default">
-          <div class="panel-content">
+
+        <div class="card">
+          <div class="card-body">
             <table class="table table-bordered table-striped table-condensed">
               <thead>
                 <tr>
@@ -71,7 +71,7 @@
                   <th >Message</th>
                   <th >Date Sent</th>
                   <th >Status</th>
-                  <span class="pull-right total_count">Total Drafts : {{filter_list.count}}</span>
+                  <span class="float-right total_count">Total Drafts : {{filter_list.count}}</span>
                 </tr>
               </thead>
               <tbody>
@@ -86,7 +86,7 @@
                   <td>{{draft.status}}</td>
                   <td>
                     <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span></button>
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="material-icons">arrow_drop_down</span></button>
                       <ul class="dropdown-menu">
                         <li><a href="{% url 'emails:email_draft_delete' draft.id %}">Delete</a></li>
                         <li><a href="{% url 'emails:email_imp' draft.id %}">Mark As Important</a></li>
