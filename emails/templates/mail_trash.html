@@ -6,7 +6,7 @@
 <div class="main_container">
   
   <div class="row marl heading_create">
-    {% include '_mail_center.html' %}
+    {% include 'emails/_mail_center.html' %}
   </div>
   
   <div class="table_container_row row marl">
@@ -14,13 +14,7 @@
     <div class="col-md-2 col-sm-3 col-xs-12 mail_menu">
       <div class="card">
         <div class="card-body">
-          <ul class="mail_options">
-            <li><a href="{% url 'emails:email_sent' %}">Sent Mails</a></li>
-            <li><a href="{% url 'emails:email_draft' %}">Drafts</a></li>
-            <li><a href="{% url 'emails:email_imp_list' %}">Important</a></li>
-            <li><a href="{% url 'emails:list' %}">All</a></li>
-            <li class="active"><a href="{% url 'emails:email_trash' %}">Trash</a></li>
-          </ul>
+          {% include 'emails/_mail_menu.html' with active='trash' %}
         </div>
       </div>
     </div>
