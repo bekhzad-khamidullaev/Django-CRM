@@ -36,6 +36,9 @@ export default function NavBar() {
         <Button color="inherit" component={Link} href="/accounts">
           Accounts
         </Button>
+        <Button color="inherit" component={Link} href="/tasks">
+          Tasks
+        </Button>
         <Button color="inherit" component={Link} href="/leads/create">
           New Lead
         </Button>
@@ -44,6 +47,9 @@ export default function NavBar() {
         </Button>
         <Button color="inherit" component={Link} href="/accounts/create">
           New Account
+        </Button>
+        <Button color="inherit" component={Link} href="/tasks/create">
+          New Task
         </Button>
         {authenticated ? (
           <Button color="inherit" onClick={handleLogout}>
