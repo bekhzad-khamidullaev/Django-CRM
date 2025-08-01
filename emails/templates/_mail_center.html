@@ -1,0 +1,62 @@
+{% load static %}
+<div class="heading col-md-2">Mail Center</div>
+<div class="col-md-7">
+  <div class="row marl search-row">
+    <div class="form-group col-md-8 col-sm-8">
+      <div class="input-group">
+        <div class="input-group-btn left-dropdown">
+          <button type="button" class="btn dropdown-toggle filters-button btn-secondary" title="Filter" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+            <span class="filters-label">All</span><span class="material-icons">arrow_drop_down</span>
+          </button>
+          <ul class="dropdown-menu pull-left filter-menu">
+            <li>
+              <a class="preset" tabindex="-1" href="javascript:" data-name="" data-action="selectPreset">
+                <span class="material-icons right">check</span>
+                <div>All</div>
+              </a>
+            </li>
+            <li>
+              <a class="preset" tabindex="-1" href="javascript:" data-name="portalUsers" data-action="selectPreset">
+                <div>Portal Users</div>
+              </a>
+            </li>
+            <li class="divider preset-control hidden"></li>
+            <li class="preset-control remove-preset hidden"><a tabindex="-1" href="#" data-action="removePreset">Remove Filter</a></li>
+            <li class="preset-control save-preset hidden"><a tabindex="-1" href="#" data-action="savePreset">Save Filter</a></li>
+            <li class="divider"></li>
+            <li class="checkbox"><label><input type="checkbox" data-role="boolFilterCheckbox" name="onlyMy">&nbsp;&nbsp;Only My</label></li>
+            <li class="checkbox"><label><input type="checkbox" data-role="boolFilterCheckbox" name="followed">&nbsp;&nbsp;Followed</label></li>
+          </ul>
+        </div>
+        <input type="text" class="form-control text-filter" name="textFilter" value="" tabindex="1">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-primary search btn-icon" data-action="search">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-4">
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary extra_option_btn" data-action="reset">
+          <span class="material-icons">refresh</span>&nbsp;Reset
+        </button>
+        <button type="button" class="btn btn-secondary dropdown-toggle extra_option_btn add-filter-button" data-toggle="dropdown" tabindex="-1">Add Field <span class="material-icons">arrow_drop_down</span>
+        </button>
+        <ul class="dropdown-menu pull-right filter-list">
+          <li data-name="account" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="account">Account</a></li>
+          <li data-name="address" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="address">Address</a></li>
+          <li data-name="assignedUser" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="assignedUser">Assigned User</a></li>
+          <li data-name="createdAt" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="createdAt">Created At</a></li>
+          <li data-name="emailAddress" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="emailAddress">Email</a></li>
+          <li data-name="phoneNumber" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="phoneNumber">Phone</a></li>
+          <li data-name="title" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="title">Title</a></li>
+          <li data-name="targetLists" class=""><a href="#" class="add-filter" data-action="addFilter" data-name="targetLists">Target Lists</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="create_new col-md-3 text-right">
+  <a href="{% url 'emails:compose' %}"><span class="material-icons">add</span> Compose Email</a>
+</div>
