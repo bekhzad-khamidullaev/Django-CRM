@@ -11,6 +11,9 @@ export default function NavBar() {
         <Button color="inherit" component={Link} href="/leads">
           Leads
         </Button>
+        <Button color="inherit" component={Link} href="/leads/create">
+          New Lead
+        </Button>
         <Button color="inherit" component={Link} href="/login">
           Login
         </Button>

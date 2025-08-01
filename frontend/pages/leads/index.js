@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import api from '../../lib/api';
-import { Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Typography, List, ListItem, ListItemText, Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Leads() {
   const [leads, setLeads] = useState([]);
@@ -21,6 +22,14 @@ export default function Leads() {
   return (
     <Layout>
       <Typography variant="h5" gutterBottom>Leads</Typography>
+      <Button
+        variant="contained"
+        component={Link}
+        href="/leads/create"
+        sx={{ mb: 2 }}
+      >
+        Add Lead
+      </Button>
       <List>
         {leads.map((lead) => (
           <ListItem key={lead.id} divider>
