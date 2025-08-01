@@ -24,6 +24,8 @@
         <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.1.3/bootstrap-material-design.min.css">
         
         <title>Noke - Creative Multipurpose HTML Template</title>
 
@@ -320,6 +322,12 @@
         <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
         <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
         <script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.1.3/bootstrap-material-design.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('body').bootstrapMaterialDesign();
+            });
+        </script>
         <script src="{% static 'assets/js/main.js' %}"></script>
     </body>
 </html>

@@ -1,0 +1,35 @@
+<div class="filter_row row marl">
+  <div class="card">
+    <div class="card-title">
+      Filters
+    </div>
+    <form method="GET" action="{{ action_url }}" id="filter_form">
+      <div class="card-body">
+        <div class="filter_col col-md-3">
+          <div class="form-group">
+            <label for="name_filter">Name</label>
+            <input type="text" class="form-control" id="name_filter" placeholder="Name" value="{{ request.GET.name }}" name="name">
+          </div>
+        </div>
+        <div class="filter_col col-md-3">
+          <div class="form-group">
+            <label for="from_date">From Date</label>
+            <input type="text" class="form-control" id="from_date" placeholder="yyyy-mm-dd" value="{{ request.GET.from_date }}" name="from_date">
+          </div>
+        </div>
+        <div class="filter_col col-md-3">
+          <div class="form-group">
+            <label for="to_date">To Date</label>
+            <input type="text" class="form-control" id="to_date" placeholder="yyyy-mm-dd" value="{{ request.GET.to_date }}" name="to_date">
+          </div>
+        </div>
+        <div class="filter_col filter_buttons col-md-3"></div>
+        <button class="btn btn-primary save" name="email_f" value="{{ filter_value }}" type="submit">
+          <span class="material-icons">search</span> Search
+        </button>
+        <a href="{{ action_url }}"><button type="button" class="btn btn-secondary"><span class="material-icons">clear</span> Clear</button></a>
+      </div>
+    </form>
+    <br clear="all">
+  </div>
+</div>

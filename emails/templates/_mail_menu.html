@@ -1,0 +1,17 @@
+<ul class="mail_options">
+  <li class="{% if active == 'sent' %}active{% endif %}">
+    <a href="{% url 'emails:email_sent' %}"><span class="material-icons">send</span> Sent Mails</a>
+  </li>
+  <li class="{% if active == 'drafts' %}active{% endif %}">
+    <a href="{% url 'emails:email_draft' %}"><span class="material-icons">drafts</span> Drafts</a>
+  </li>
+  <li class="{% if active == 'important' %}active{% endif %}">
+    <a href="{% url 'emails:email_imp_list' %}"><span class="material-icons">label_important</span> Important</a>
+  </li>
+  <li class="{% if active == 'all' %}active{% endif %}">
+    <a href="{% url 'emails:list' %}"><span class="material-icons">mail</span> All</a>
+  </li>
+  <li class="{% if active == 'trash' %}active{% endif %}">
+    <a href="{% url 'emails:email_trash' %}"><span class="material-icons">delete</span> Trash</a>
+  </li>
+</ul>
