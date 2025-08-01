@@ -20,38 +20,8 @@
     </div>
     
     <div class="col-md-10 col-sm-9 col-xs-12">
-      <div class="filter_row row marl">
-        <div class="card">
-          <div class="card-title">
-            Filters
-          </div>
-          <form method="GET" action="/emails/email_imp_list/" >
-            <div class="card-body">
-              <div class="filter_col col-md-3">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" placeholder="Name" value="{{request.GET.name}}" name="name">
-                </div>
-              </div>
-              <div class="filter_col col-md-3">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">From Date</label>
-                  <input type="text" class="form-control" id="from_date" placeholder="From Date" value="{{request.GET.from_date}}" name="from_date">
-                </div>
-              </div>
-              <div class="filter_col col-md-3">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">To Date</label>
-                  <input type="text" class="form-control" id="to_date" placeholder="To Date" value="{{request.GET.to_date}}" name="to_date">
-                </div>
-              </div>
-              <div class="filter_col filter_buttons col-md-3"></div>
-              <button class="btn btn-primary save" name="email_f" value="True" type="submit">Search</button>
-              <a href="{% url 'emails:email_imp_list' %}"><button type="button" class="btn btn-secondary">Clear</button></a>
-            </div>
-          </form>
-          <br clear="all">
-        </div>
+      {% url 'emails:email_imp_list' as filter_url %}
+      {% include 'emails/_mail_filters.html' with action_url=filter_url filter_value='True' %}
         <div class="card">
           <div class="card-body">
             <table class="table table-bordered table-striped table-condensed">
