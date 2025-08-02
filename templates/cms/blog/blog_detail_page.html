@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="row align-items-center justify-content-center">
-        <div class="col-lg-12"><a href="{{   self.get_parent.url  }}" class="back_to_blog"><i class="fas fa-chevron-left"></i> Back to Blog List</a></div>
+        <div class="col-lg-12"><a href="{{   self.get_parent.url  }}" class="back_to_blog"><span class="material-icons">chevron_left</span> Back to Blog List</a></div>
     </div>
         <!-- Start Page Title Area -->
    
@@ -11,7 +11,7 @@
                 <div class="page-title-content">
                     <h4>{{ page.title }}</h4>
                     <ul>
-                        <li><i class="far fa-calendar-alt"></i> Posted on: {{ self.first_published_at }}</li>                    
+                        <li><span class="material-icons">calendar_month</span> Posted on: {{ self.first_published_at }}</li>
                     </ul>
                 </div>
             </div>
@@ -41,6 +41,6 @@
        
 
         
-        <div class="go-top"><i class="fas fa-chevron-up"></i></div>
+        <div class="go-top"><span class="material-icons">keyboard_arrow_up</span></div>
         
 {% endblock content %}
